@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN buildDeps="g++ git libclang-${LLVM_VERSION}-dev llvm-${LLVM_VERSION}-dev zlib1g-dev" \
     && apt-get update \
     && apt-get install -y $buildDeps --no-install-recommends \
-    && git clone -b 1.4 --depth 1 https://github.com/KDE/clazy.git \
+    && git clone -b 1.5 --depth 1 https://github.com/KDE/clazy.git \
     && mkdir clazy/build \
     && cd clazy/build \
     && cmake -GNinja .. \
