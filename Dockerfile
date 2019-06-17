@@ -1,14 +1,11 @@
-FROM debian:buster
+FROM floydci/debian:testing
 
 ARG LLVM_VERSION=7
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        ca-certificates \
         clang-${LLVM_VERSION} \
         clang-tidy-${LLVM_VERSION} \
-        cmake \
         iwyu \
-        ninja-build \
     && rm -rf /var/lib/apt/lists/*
 
 RUN buildDeps="g++ git libclang-${LLVM_VERSION}-dev llvm-${LLVM_VERSION}-dev zlib1g-dev" \
